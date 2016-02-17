@@ -1,4 +1,4 @@
 <?php
 $app->get('/blog',function() use ($app){
-  $app->render('blog.php');
+  $app->render('blog/blog.php');
 });

@@ -27,6 +27,10 @@ Application Specefic Routes
 */
 
 require INC_ROOT . '/app/routes/manage/users.php';
-require INC_ROOT . '/app/routes/user/banned.php';
-require INC_ROOT . '/app/routes/auth/password/new.php';
 require INC_ROOT . '/app/routes/manage/info.php';
+
+require INC_ROOT . '/app/routes/user/banned.php';
+
+require INC_ROOT . '/app/routes/auth/password/new.php';
+
+require INC_ROOT . '/app/routes/blog/blog.php';
