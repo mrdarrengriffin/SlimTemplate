@@ -1,0 +1,12 @@
+#######################
+# SlimTemplate README #
+#######################
+
+# Notes to consider
+	- Users SQL database structure is located in ~/app/MrDarrenGriffin/User/UsersTable.sql
+	- MySQL & Mail credentials are stored in ~/app/config/(development/production).php
+		-- Change the global information such as the application name and URL in the config file also
+	- If used, Changelog should be in ~/app/CHANGELOG
+
+# Version
+(Learn versioning scheme)

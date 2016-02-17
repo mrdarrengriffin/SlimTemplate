@@ -1,0 +1,89 @@
+h1,h2,h3,h4,h5,h6{
+	margin-top:0;
+}
+.page-header{
+	margin-top:20px;
+	padding-bottom:0;
+}
+.stat-box{
+	height:150px;
+}
+.label{
+	margin-right:4px;
+	display:inline-block;
+	
+}
+.dropdown-toggle .glyphicon{
+	top: 2px;
+}
+.form-group{
+	/margin-bottom:40px;
+}
+
+.btn-group{
+	margin-bottom:3px;
+}
+.form-group input[type=checkbox]{
+	margin-top:11px;
+	margin-left:2px;
+}
+
+.link{
+	color: #337ab7;
+    text-decoration: none;
+	cursor:pointer;
+}
+.panel-heading-small{
+	height:32px;
+	font-size:12px;
+	padding-top:8px;
+}
+.panel-heading .btn.btn-sm:first-child{
+	margin:-5px -10px 0 0;
+}
+.panel-heading .btn.btn-sm:not(first-child){
+	margin:-5px 5px 0 0;
+}
+.panel-heading .btn.btn-xs:first-child{
+	margin:-4px -10px 0 0;
+}
+.panel-heading .btn.btn-xs:not(first-child){
+	margin:-4px 3px 0 0;
+}
+@media print {
+	a[href]:after {
+		content: none !important;
+	}
+}
+thead {display: table-header-group;}
+
+@media print
+{
+	table { page-break-inside:auto }
+	tr    { page-break-inside:avoid; page-break-after:auto }
+}
+
+hr{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.well{
+	padding: 0 14px;
+}
+.form-group{
+	position:relative;
+}
+.clear-control > *:hover ~ .input-clear{opacity:.7;}
+.input-clear{cursor:pointer;}
+.input-clear:hover{opacity:1;}
+.input-clear{
+	position:absolute;
+	top:35px;
+	opacity:.3;
+	transition:opacity .2s;
+	right:10px;
+}
+.form-group-sm .input-clear{
+		top:33px;
+
+}
