@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 Class Blog extends Eloquent
 {
-	protected $table = 'blog';
+	protected $table = 'blg';
 	public $timestamps = false;
 	protected $fillable = [
 		'user_id',
