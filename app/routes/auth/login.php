@@ -21,7 +21,7 @@ $app->post('/login', $guest(),function() use ($app){
 	$v->validate([
 		'username' => [$username,'required'],
 		'password' => [$password,'required']
-		]);
+	]);
 
 	if($v->passes()){
 		$user = $app->user->where('username',$username)->where('active',true)->first();
@@ -36,33 +36,33 @@ $app->post('/login', $guest(),function() use ($app){
 				$user->updateRememberCredentials($rememberIdentifier,$app->hash->hash($rememberToken));
 
 				$app->setCookie(
-					$app->config->get('auth.remember'),
-					"{$rememberIdentifier}___{$rememberToken}",
-					Carbon::parse("+1 week")->timestamp
-					);
-			}
-
-			if($user->getAttributeByName('first_login') == "true"){
-				$user->updateAttribute('first_login',false);
-				$app->flash('success',"Welcome, <strong>$user->username</strong>, to ".$app->config->get('app.name').".");
-			}else{
-				$app->flash('success',"Welcome back <strong>$user->username</strong>!");
-			}
-
-			if($user->require_new_password == "1"){$app->response->redirect($app->urlFor('new-password'));}else{
-				$app->response->redirect($app->urlFor('home'));
-			}
-		}else{
-			$app->flash('warning',"Incorrect username and/or password.");
-			$app->response->redirect($app->urlFor('login'));
+				$app->config->get('auth.remember'),
+				"{$rememberIdentifier}___{$rememberToken}",
+				Carbon::parse("+1 week")->timestamp
+			);
 		}
 
+		if($user->getAttributeByName('first_login') == "true"){
+			$user->updateAttribute('first_login',false);
+			$app->flash('success',"Welcome, <strong>$user->username</strong>, to ".$app->config->get('app.name').".");
+		}else{
+			$app->flash('success',"Welcome back <strong>$user->username</strong>!");
+		}
+
+		if($user->require_new_password == "1"){$app->response->redirect($app->urlFor('new-password'));}else{
+			$app->response->redirect($app->urlFor('home'));
+		}
+	}else{
+		$app->flash('warning',"Incorrect username and/or password.");
+		$app->response->redirect($app->urlFor('login'));
 	}
 
+}
 
-	$app->render('auth/login.php',[
-		'errors' => $v->errors(),
-		'request' => $request
-		]);
+
+$app->render('auth/login.php',[
+	'errors' => $v->errors(),
+	'request' => $request
+]);
 
 })->name('login.post');

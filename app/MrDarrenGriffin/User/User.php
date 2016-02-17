@@ -9,21 +9,21 @@ Class User extends Eloquent
 	protected $table = 'users';
 	public $timestamps = false;
 	protected $fillable = [
-	'username',
-	'first_name',
-	'last_name',
-	'password',
-	'active',
-	'active_hash',
-	'recovery_hash',
-	'remember_identifier',
-	'remember_token',
-	'is_banned',
-	'email',
-	'attributes',
-	'permissions',
-	'created_at',
-	'updated_at',
+		'username',
+		'first_name',
+		'last_name',
+		'password',
+		'active',
+		'active_hash',
+		'recovery_hash',
+		'remember_identifier',
+		'remember_token',
+		'is_banned',
+		'email',
+		'attributes',
+		'permissions',
+		'created_at',
+		'updated_at',
 	];
 
 	public function getFullName(){
@@ -43,7 +43,7 @@ Class User extends Eloquent
 			'active' => true,
 			'updated_at' => time(),
 			'active_hash' => null
-			]);
+		]);
 	}
 
 	public function updateAttribute($attribute,$value){
@@ -55,7 +55,7 @@ Class User extends Eloquent
 		$this->update([
 			'attributes' => $newAttributes,
 			'updated_at' => time(),
-			]);
+		]);
 	}
 	public function deleteAttribute($attribute){
 		$currentAttributes = json_decode($this->attributes['attributes'],true);
@@ -63,7 +63,7 @@ Class User extends Eloquent
 		$this->update([
 			'attributes' => json_encode($currentAttributes,true),
 			'updated_at' => time(),
-			]);
+		]);
 	}
 
 	public function getAvatarUrl($options = []){
@@ -75,7 +75,7 @@ Class User extends Eloquent
 		$this->update([
 			'remember_identifier' => $identifier,
 			'remember_token' => $token
-			]);
+		]);
 	}
 
 	public function removeRememberCredentials(){

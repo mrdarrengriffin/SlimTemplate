@@ -13,6 +13,6 @@ $capsule->addConnection([
   'charset' => $app->config->get('db.charset'),
   'collation' => $app->config->get('db.collation'),
   'prefix' => $app->config->get('db.prefix')
-  ]);
+]);
 
-  $capsule->bootEloquent();
+$capsule->bootEloquent();

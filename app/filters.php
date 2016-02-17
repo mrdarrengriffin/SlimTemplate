@@ -18,7 +18,7 @@ $permissionCheck = function($node) use ($app){
 };
 
 $authenticated = function() use ($authenticationCheck){
-    return $authenticationCheck(true);
+  return $authenticationCheck(true);
 };
 
 $guest = function() use ($authenticationCheck){
