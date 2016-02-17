@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 Class Blog extends Eloquent
 {
-	protected $table = 'blg';
+	protected $table = 'blog';
 	public $timestamps = false;
 	protected $fillable = [
 		'user_id',
@@ -15,5 +15,8 @@ Class Blog extends Eloquent
     'timestamp_created',
 	];
 
+  public function user(){
+    return $this->hasOne('MrDarrenGriffin\User\User','id','user_id');
+  }
 
 }

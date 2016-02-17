@@ -5,5 +5,7 @@
 {% block content %}
 This is the blog page
 
-{% if showEditor %}I will show the editor{% endif %}
+{% for b in blogItems %}
+{{ b }}
+{% endfor %}
 {% endblock %}
