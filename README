@@ -1,12 +1,6 @@
-#######################
-# SlimTemplate README #
-#######################
+# SlimTemplate #
+By Darren Griffin
 
-# Notes to consider
-	- Users SQL database structure is located in ~/app/MrDarrenGriffin/User/UsersTable.sql
-	- MySQL & Mail credentials are stored in ~/app/config/(development/production).php
-		-- Change the global information such as the application name and URL in the config file also
-	- If used, Changelog should be in ~/app/CHANGELOG
+Originally inspired by Alex Garrett (CodeCourse formerly known as PHPAcademy).
 
-# Version
-(Learn versioning scheme)
+This project has brances for applications that the Framework could have in the future. This is easier for me to pick which template comes with what.
