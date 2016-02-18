@@ -3,9 +3,13 @@
 {% block title %}Blog{% endblock %}
 
 {% block content %}
-This is the blog page
-
 <div class="blog-container">
+
+  {% if blogItems.count == 0 %}
+  <h1 class="text-center">No blog posts yet!</h1>
+  <h4 class="text-center text-muted">We shall post some soon though!</h4>
+  {% endif %}
+
   {% for b in blogItems %}
   <div class="blog-item">
     <div class="blog-heading">

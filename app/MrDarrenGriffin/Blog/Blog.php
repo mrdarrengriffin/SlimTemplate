@@ -13,6 +13,7 @@ Class Blog extends Eloquent
     'title',
     'content',
     'timestamp_created',
+		'enabled',
 	];
 
   public function user(){
