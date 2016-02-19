@@ -5,6 +5,10 @@
 {% block content %}
 <div class="blog-container">
 
+  {% if auth.hasPermission('blog.create-posts') %}
+
+  {% endif %}
+
   {% if blogItems.count == 0 %}
   <h1 class="text-center">No blog posts yet!</h1>
   <h4 class="text-center text-muted">We shall post some soon though!</h4>
