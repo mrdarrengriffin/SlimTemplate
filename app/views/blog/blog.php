@@ -6,20 +6,28 @@
 <div class="blog-container">
 
   {% if auth.hasPermission('blog.create-posts') %}
-  <div class="panel panel-default">
-    <div class="panel-heading">Create Blog Post</div>
-    <div class="panel-body">
-      <div class="form-group">
-        <label for="post-title">Post Title</label>
-        <input type="test" class="form-control" id="post-title" name="post-title">
+  <form action="{{ urlFor('blog.create-post.post') }}" method="post">
+    <div class="panel panel-default">
+      <div class="panel-heading">Create Blog Post</div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="title">Post Title</label>
+          <input type="text" class="form-control" id="title" name="title">
+          {% if errors.first('title') %}This field is required{% endif %}
+        </div>
+        <div class="form-group" style="margin-bottom:5px;">
+          <label for="ckeditor">Content</label>
+          <textarea name="content" id="ckeditor"></textarea>
+          {% if errors.first('content') %}This field is required{% endif %}
+        </div>
       </div>
-      <div class="form-group" style="margin-bottom:5px;">
-        <label for="ckeditor">Content</label>
-        <textarea name="ckeditor" id="ckeditor"></textarea>
+      <div class="panel-footer text-right">
+        <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
+        <input type="submit" class="btn btn-sm btn-success" value="Create Post">
       </div>
     </div>
-    <div class="panel-footer text-right"><input type="button" class="btn btn-sm btn-success" value="Create Post"></div>
-  </div>
+  </form>
+  <hr>
   {% endif %}
 
   {% if blogItems.count == 0 %}
