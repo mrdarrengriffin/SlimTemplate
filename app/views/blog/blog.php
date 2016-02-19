@@ -6,7 +6,7 @@
 <div class="blog-container">
 
   {% if auth.hasPermission('blog.create-posts') %}
-
+  <textarea name="ckeditor" id="ckeditor" rows="10" cols="80"></textarea>
   {% endif %}
 
   {% if blogItems.count == 0 %}
