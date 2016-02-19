@@ -6,7 +6,20 @@
 <div class="blog-container">
 
   {% if auth.hasPermission('blog.create-posts') %}
-  <textarea name="ckeditor" id="ckeditor" rows="10" cols="80"></textarea>
+  <div class="panel panel-default">
+    <div class="panel-heading">Create Blog Post</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="post-title">Post Title</label>
+        <input type="test" class="form-control" id="post-title" name="post-title">
+      </div>
+      <div class="form-group" style="margin-bottom:5px;">
+        <label for="ckeditor">Content</label>
+        <textarea name="ckeditor" id="ckeditor"></textarea>
+      </div>
+    </div>
+    <div class="panel-footer text-right"><input type="button" class="btn btn-sm btn-success" value="Create Post"></div>
+  </div>
   {% endif %}
 
   {% if blogItems.count == 0 %}
