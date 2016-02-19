@@ -4,7 +4,6 @@
 
 {% block content %}
 <div class="blog-container">
-
   {% if auth.hasPermission('blog.create-posts') %}
   <form action="{{ urlFor('blog.create-post.post') }}" method="post">
     <div class="panel panel-default">
