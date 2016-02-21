@@ -15,8 +15,9 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `enabled` int(1) unsigned NOT NULL DEFAULT '0',
-  `title` text,
+  `title` varchar(255) DEFAULT NULL,
   `content` longtext,
+  `attributes` longtext,
   `timestamp_created` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

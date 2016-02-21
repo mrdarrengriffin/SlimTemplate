@@ -13,6 +13,12 @@ return [
 		'enabled' => false,
 		'allowed_ips' => ['192.168.0.1','192.168.0.5','::1'],
 	],
+	'social' => [
+    'reddit' => [
+      'enabled' => true,
+      'subreddit' => 'expansion',
+    ],
+  ],
 	'db' => [
 		'driver' => 'mysql',
 		'host' => '',

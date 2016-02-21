@@ -100,3 +100,13 @@ hr{
 .panel-footer .btn.btn-sm{
 	margin:-11px;
 }
+.char-count-text{
+	position: absolute;
+	right:0;
+	font-size:10px;
+	text-align:right;
+	text-transform: lowercase;
+}
+.char-count-text .chars-remaining{
+	font-weight:700;
+}
