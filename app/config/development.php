@@ -2,7 +2,7 @@
 
 return [
 	'app' => [
-		'name' => '#app.name',
+		'name' => '#appname',
 		'url' => 'http://localhost/slimTemplate',
 		'hash' => [
 			'algo' => PASSWORD_BCRYPT,
