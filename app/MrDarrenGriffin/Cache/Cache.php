@@ -1,16 +1,17 @@
 <?php
-
+namespace MrDarrenGriffin\Cache;
 Class Cache{
 
   public $cacheDirectory = '';
   public $controller = '';
 
   public function __construct($cacheDirectory, $controller){
-    $this->cacheDirectory = rtrim($cacheDirectory,['/','\/']).'/';
-    $this->controller = rtrim($controller,['/','\/']).'/';
+    $this->cacheDirectory = rtrim($cacheDirectory,'/').'/';
+    $this->controller = rtrim($controller,'/').'/';
+    if(!is_dir($this->cacheDirectory.$this->controller)){mkdir($this->cacheDirectory.$this->controller,0777,true);}
   }
 
-  public function storeImage($url,$filename){
+  public function store($url,$filename){
     return copy($url,$this->cacheDirectory.$this->controller.$filename);
   }
 
