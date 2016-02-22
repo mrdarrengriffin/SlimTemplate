@@ -3,11 +3,12 @@
 namespace MrDarrenGriffin\User;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-
+use MrDarrenGriffin\Cache\Cache;
 Class User extends Eloquent
 {
 	protected $table = 'users';
 	public $timestamps = false;
+	public $cache;
 	protected $fillable = [
 		'username',
 		'first_name',
@@ -25,6 +26,10 @@ Class User extends Eloquent
 		'created_at',
 		'updated_at',
 	];
+
+	public function __construct(){
+		$this->cache = new Cache(INC_ROOT.'/public/cache','User');
+	}
 
 	public function getFullName(){
 		if(!$this->first_name || !$this->last_name){
