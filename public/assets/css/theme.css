@@ -30,7 +30,7 @@ h1,h2,h3,h4,h5,h6{
 
 .link{
 	color: #337ab7;
-    text-decoration: none;
+	text-decoration: none;
 	cursor:pointer;
 }
 .panel-heading-small{
@@ -84,9 +84,25 @@ hr{
 	right:10px;
 }
 .form-group-sm .input-clear{
-		top:33px;
+	top:33px;
 
 }
+<<<<<<< HEAD
+=======
+.panel-body{
+	padding:10px 15px;
+}
+.panel-footer{
+	padding: 8px 15px 10px 15px;
+}
+.panel-footer .btn{
+	border-radius:2px;
+	margin: -3px -9px -5px 9px;
+}
+.panel-footer .btn.btn-sm{
+	margin:-11px;
+}
+>>>>>>> Blog
 .char-count-text{
 	position: absolute;
 	right:0;
